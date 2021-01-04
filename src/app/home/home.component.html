@@ -1,0 +1,52 @@
+
+
+
+<div class="create-account">
+  
+  <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+    <div class="container">
+        <a class="navbar-brand">AIGILX</a>
+        <ul class="nav navbar-nav navbar-right" routerLinkActive="active">
+           
+            <li class="nav-item"><a class="nav-link" class="glyphicon glyphicon-log-out" routerLink=""> logout</a></li>
+        </ul>
+    </div>
+</nav>
+    <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+            <h2>ADD DETAILS</h2>
+        <form [formGroup]="createAccountForm" (ngSubmit)="add(myform)" #myform="ngForm">
+          <div class="form-group">
+            <select formControlName="country" class="form-control" (change)="onChangeCountry($event.target.value)" ngModel required>
+              <option value="">Select country...</option>
+              <option *ngFor="let country of countries" [value]="country.c_id" >{{country.c_name}}</option>
+
+        
+            </select>
+         
+                  </div>
+          <div class="form-group">
+            <select formControlName="state" class="form-control" (change)="onChangeState($event.target.value)"ngModel required>
+              <option value="">Select state...</option>
+              <option *ngFor="let state of states" [value]="state.s_id">{{state.s_name}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <select formControlName="city" class="form-control"ngModel required>
+              <option value="">Select city...</option>
+              <option *ngFor="let city of cities" [value]="city.id">{{city.name}}</option>
+            </select>
+          </div>
+          <div class="btn-toolbar"> 
+            <input type="submit" class="btn btn-success" value="Register">
+            <button type="button" class="btn btn-info">
+                <span class="glyphicon glyphicon-pencil"></span><a routerLink="/add"> Create</a>
+              </button>
+          </div>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+  </div>

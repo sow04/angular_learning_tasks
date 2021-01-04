@@ -1,0 +1,27 @@
+<div class="container">
+        <div class="logo">CREATE DATA</div>
+        <div class="login-item">
+          <br>      
+          <form #myform="ngForm" (ngSubmit)="create(myform)" class="form form-login">
+            <div class="form-field">
+              <label  for="login-email"><span class="hidden">Country</span></label>
+              <input name="country" id="login-email" type="text" class="form-input" placeholder="Country" required ngModel>
+            </div>
+    <br>
+            <div class="form-field">
+              <label  for="login-password"><span class="hidden">State</span></label>
+              <input name="state" id="login-password" type="text" class="form-input" placeholder="State" required ngModel>
+            </div>
+            <br>
+            <div class="form-field">
+                    <label  for="login-password"><span class="hidden">City</span></label>
+                    <input name="city" id="login-password" type="text" class="form-input" placeholder="City" required ngModel>
+                  </div>
+          <br>
+    
+            <div class="form-field">
+              <input type="submit" style="background-color:green" value="SAVE" >
+            </div>
+          </form>
+        </div>
+    </div>
